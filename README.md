@@ -1,4 +1,4 @@
-# Pi Agent Recipe
+# Coding Agent Recipe
 
 A Git-backed Introspection recipe for running a customizable Pi coding agent.
 
@@ -8,10 +8,10 @@ Use this repository as a GitHub template when you want to create a new managed r
 
 An Introspection recipe is a package of possible runtime behavior. This repository contains:
 
-- `.introspection/pi-agent.yaml`: the GitOps manifest Introspection discovers.
-- `apps/pi-agent/`: the recipe package the manifest points at.
-- `apps/pi-agent/agents/agent.yaml`: the default runnable agent.
-- `apps/pi-agent/SYSTEM.md`: the base system prompt shared by the agent.
+- `.introspection/coding-agent.yaml`: the GitOps manifest Introspection discovers.
+- `apps/coding-agent/`: the recipe package the manifest points at.
+- `apps/coding-agent/agents/agent.yaml`: the default runnable agent.
+- `apps/coding-agent/SYSTEM.md`: the base system prompt shared by the agent.
 
 When you create a runtime from this repo, Introspection reads the manifest, pins the selected git commit, and launches the default agent from the recipe package.
 
@@ -22,16 +22,16 @@ When you create a runtime from this repo, Introspection reads the manifest, pins
 3. Open Introspection and choose **New runtime**.
 4. Select **From existing recipe**.
 5. Pick your new repo and branch.
-6. Select `.introspection/pi-agent.yaml`.
+6. Select `.introspection/coding-agent.yaml`.
 7. Create the runtime and open **Preview Agent**.
 
 ## Repository Layout
 
 ```text
 .introspection/
-  pi-agent.yaml
+  coding-agent.yaml
 apps/
-  pi-agent/
+  coding-agent/
     README.md
     SYSTEM.md
     package.json
@@ -46,12 +46,12 @@ apps/
 
 ## How It Works
 
-The manifest at `.introspection/pi-agent.yaml` is the registry entry:
+The manifest at `.introspection/coding-agent.yaml` is the registry entry:
 
 ```yaml
-name: pi-agent
-runtime_name: pi-agent
-path: apps/pi-agent
+name: coding-agent
+runtime_name: coding-agent
+path: apps/coding-agent
 description: Customizable Pi coding agent
 runtime:
   kind: byor
@@ -67,10 +67,10 @@ Profiles are optional. Add `profiles/*.yaml` only when you need named variants f
 
 Edit these files first:
 
-- `apps/pi-agent/SYSTEM.md` for shared behavior and operating rules.
-- `apps/pi-agent/agents/agent.yaml` for model, tools, skills, subagents, and role instructions.
-- `apps/pi-agent/skills/` for reusable instruction bundles.
-- `apps/pi-agent/extensions/` for custom tools or runtime hooks.
+- `apps/coding-agent/SYSTEM.md` for shared behavior and operating rules.
+- `apps/coding-agent/agents/agent.yaml` for model, tools, skills, subagents, and role instructions.
+- `apps/coding-agent/skills/` for reusable instruction bundles.
+- `apps/coding-agent/extensions/` for custom tools or runtime hooks.
 
 ## Monorepos
 
@@ -78,10 +78,10 @@ You can keep multiple recipes in one repo. Each manifest in `.introspection/` po
 
 ```text
 .introspection/
-  pi-agent.yaml
+  coding-agent.yaml
   customer-support.yaml
 apps/
-  pi-agent/
+  coding-agent/
   customer-support/
 ```
 

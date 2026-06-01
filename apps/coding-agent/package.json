@@ -1,5 +1,5 @@
 {
-  "name": "@introspection/pi-agent",
+  "name": "@introspection/coding-agent",
   "version": "0.1.0",
   "description": "A git-backed Pi recipe for managed Introspection runtimes.",
   "keywords": [

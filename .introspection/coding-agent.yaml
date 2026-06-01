@@ -1,6 +1,6 @@
-name: pi-agent
-runtime_name: pi-agent
-path: apps/pi-agent
+name: coding-agent
+runtime_name: coding-agent
+path: apps/coding-agent
 description: Customizable Pi coding agent
 runtime:
   kind: byor

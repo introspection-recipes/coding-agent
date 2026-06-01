@@ -1,4 +1,4 @@
-# Pi Agent Package
+# Coding Agent Package
 
 This directory is the recipe package loaded by Introspection.
 
