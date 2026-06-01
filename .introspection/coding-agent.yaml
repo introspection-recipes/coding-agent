@@ -1,0 +1,8 @@
+name: coding-agent
+runtime_name: coding-agent
+path: apps/coding-agent
+description: Customizable Pi coding agent
+runtime:
+  kind: byor
+  llm_mode: managed
+  allow_hot_swap: false

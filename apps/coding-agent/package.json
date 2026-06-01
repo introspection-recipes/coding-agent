@@ -1,0 +1,30 @@
+{
+  "name": "@introspection/coding-agent",
+  "version": "0.1.0",
+  "description": "A git-backed Pi recipe for managed Introspection runtimes.",
+  "keywords": [
+    "pi-package",
+    "pi-coding-agent",
+    "managed-agent",
+    "recipe"
+  ],
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "pi": {
+    "agents": [
+      "./agents/*.yaml"
+    ],
+    "skills": [
+      "./skills/*/SKILL.md"
+    ],
+    "extensions": [
+      "./extensions/**/*"
+    ]
+  }
+}
