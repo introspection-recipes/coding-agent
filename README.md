@@ -78,11 +78,11 @@ You can keep multiple recipes in one repo. Each manifest in `.introspection/` po
 
 ```text
 .introspection/
+  pi-agent.yaml
   customer-support.yaml
-  sales-assistant.yaml
 apps/
+  pi-agent/
   customer-support/
-  sales-assistant/
 ```
 
 Example manifest:
