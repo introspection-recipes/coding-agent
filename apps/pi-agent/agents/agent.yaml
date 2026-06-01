@@ -1,0 +1,15 @@
+name: agent
+description: Default Pi coding agent
+model:
+  name: anthropic/claude-sonnet-4-6
+  reasoning_effort: low
+tools:
+  - read
+  - bash
+  - edit
+  - write
+system_instructions:
+  mode: append
+  content: |
+    You are the default Pi runtime agent for this recipe.
+    Focus on practical engineering work: inspect the codebase, make targeted changes, and explain outcomes clearly.
