@@ -52,9 +52,7 @@ runtime_name: coding-agent
 path: .
 description: Customizable Pi coding agent
 runtime:
-  kind: byor
   llm_mode: managed
-  allow_hot_swap: false
 ```
 
 The `path` field points at the recipe package. Inside that package, `agents/agent.yaml` is the default entrypoint.
@@ -91,6 +89,5 @@ runtime_name: customer-support
 path: apps/customer-support
 description: Customer support agent
 runtime:
-  kind: byor
   llm_mode: managed
 ```
