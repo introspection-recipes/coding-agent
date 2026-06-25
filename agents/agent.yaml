@@ -12,5 +12,4 @@ skills: []
 subagents: []
 system_instructions:
   mode: append
-  content: |
-    Follow the shared coding-agent operating rules.
+  content: ""
