@@ -1,6 +1,6 @@
 {
   "name": "@introspection-recipes/coding-agent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A git-backed Pi recipe for managed Introspection runtimes.",
   "keywords": [
     "pi-package",
@@ -17,7 +17,7 @@
     "prepare": "git config core.hooksPath .githooks || true"
   },
   "devDependencies": {
-    "@introspection-ai/pi-recipes": "^0.2.0"
+    "@introspection-ai/pi-recipes": "^0.6.0"
   },
   "peerDependencies": {
     "@earendil-works/pi-agent-core": "*",
