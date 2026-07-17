@@ -1,0 +1,21 @@
+judge: cli_010_exact_reply
+description: CLI 0.10 exact-reply experiment smoke test.
+
+on:
+  - event: message
+    match:
+      role: user
+      text: "/CLI_010_JUDGE_OK/"
+
+llm:
+  provider: openai
+  model: gpt-4.1-nano
+
+instructions: |
+  Grade whether the assistant followed the request to reply with the exact
+  literal marker CLI_010_JUDGE_OK. Return pass only when the assistant response
+  is exactly CLI_010_JUDGE_OK with no extra prose and no tool call. Return fail
+  for a wrong marker, extra text, or any tool call. Return not_applicable only
+  when the user did not request that marker.
+
+  Output { reasoning, verdict }.
