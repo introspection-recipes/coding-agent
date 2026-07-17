@@ -1,5 +1,5 @@
 judge: cli_010_exact_reply
-description: CLI 0.10 exact-reply experiment smoke test.
+description: CLI 0.10 exact-reply experiment and cold-preview smoke test.
 
 on:
   - event: message
