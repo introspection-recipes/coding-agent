@@ -48,7 +48,6 @@ The manifest at `.introspection/coding-agent.yaml` is the registry entry:
 
 ```yaml
 name: coding-agent
-runtime_name: coding-agent
 path: .
 description: Customizable Pi coding agent
 runtime:
@@ -85,7 +84,6 @@ Example manifest:
 
 ```yaml
 name: customer-support
-runtime_name: customer-support
 path: apps/customer-support
 description: Customer support agent
 runtime:
