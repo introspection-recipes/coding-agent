@@ -1,105 +1,39 @@
-# Coding Agent Recipe
+# Coding agent
 
-A Git-backed Introspection recipe for running a customizable Pi coding agent.
-
-Use this repository as a GitHub template when you want to create a new managed runtime recipe. The template starts with one default agent and no additional variants, so the first run is easy to understand and customize.
-
-## What This Is
-
-An Introspection recipe is a package of possible runtime behavior. This repository contains:
-
-- `.introspection/coding-agent.yaml`: the GitOps manifest Introspection discovers.
-- `package.json`: the recipe package metadata and Pi resource globs.
-- `agents/agent.yaml`: the default runnable agent.
-- `SYSTEM.md`: the base system prompt shared by the agent.
-
-When you create a runtime from this repo, Introspection reads the manifest, pins the selected git commit, and launches the default agent from the recipe package.
+A starting point for your coding agent.
 
 ## Quickstart
 
-1. Click **Use this template** in GitHub.
-2. Create a repo in your GitHub account or organization.
-3. Open Introspection and choose **New runtime**.
-4. Select **From existing recipe**.
-5. Pick your new repo and branch.
-6. Select `.introspection/coding-agent.yaml`.
-7. Create the runtime and open **Preview Agent**.
-
-## Repository Layout
-
-```text
-.introspection/
-  coding-agent.yaml
-README.md
-SYSTEM.md
-package.json
-agents/
-  README.md
-  agent.yaml
-skills/
-  README.md
-extensions/
-  README.md
-```
-
-## How It Works
-
-The manifest at `.introspection/coding-agent.yaml` is the registry entry:
-
-```yaml
-name: coding-agent
-path: .
-description: Customizable Pi coding agent
-runtime:
-  llm_mode: managed
-```
-
-The `path` field points at the recipe package. Inside that package, `agents/agent.yaml` is the default entrypoint.
-
-Add additional `agents/*.yaml` files when you need named variants for experiments, model changes, or alternate entrypoints. Use `from: agent` when a variant should inherit the default agent's shared settings.
-
-## Customize
-
-Edit these files first:
-
-- `SYSTEM.md` for shared behavior and operating rules.
-- `agents/agent.yaml` for model, tools, skills, subagents, and role instructions.
-- `skills/` for reusable instruction bundles.
-- `extensions/` for custom tools or runtime hooks.
-
-## Monorepos
-
-You can keep multiple recipes in one repo. Each manifest in `.introspection/` points at its own package path:
-
-```text
-.introspection/
-  coding-agent.yaml
-  customer-support.yaml
-apps/
-  coding-agent/
-  customer-support/
-```
-
-Example manifest:
-
-```yaml
-name: customer-support
-path: apps/customer-support
-description: Customer support agent
-runtime:
-  llm_mode: managed
-```
-
-## Validating Locally
-
-CI validates every push with [`pi-recipes-action`](https://github.com/introspection-org/pi-recipes-action). To run the same check before each commit, enable the bundled pre-commit hook once after cloning:
+Install Pi and the Recipes extension once per machine:
 
 ```bash
-git config core.hooksPath .githooks   # or: npm install
+pi install npm:@introspection-ai/recipes
 ```
 
-Or run the check directly at any time:
+Then clone this template and run it:
 
 ```bash
-npx -y -p @introspection-ai/pi-recipes@latest recipes check . --profile ci
+git clone https://github.com/introspection-recipes/coding-agent
+pi --recipe ./coding-agent
 ```
+
+## Make it yours
+
+This is a directory, so change it like any other source. Nothing here is
+generated and nothing is hidden.
+
+| Path | What it is |
+| --- | --- |
+| `SYSTEM.md` | instructions every agent in the package starts from |
+| `agents/agent.yaml` | model, tools, skills and subagents for the one agent |
+
+Check your changes before you commit them:
+
+```bash
+introspection check
+```
+
+## Docs
+
+The format, the agent file, MCP policy and judges are documented at
+[pi.recipes/docs](https://pi.recipes/docs).

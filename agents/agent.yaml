@@ -10,6 +10,3 @@ tools:
   - write
 skills: []
 subagents: []
-system_instructions:
-  mode: append
-  content: ""
