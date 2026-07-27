@@ -1,39 +1,21 @@
-# Coding agent
+# Starter Template
 
-A starting point for your coding agent.
+A starter template for Pi.
 
-## Quickstart
+## Quick Start
 
-Install Pi and the Recipes extension once per machine:
+Click **Use this template** above to create your repository, then run:
 
 ```bash
 pi install npm:@introspection-ai/recipes
+cd your-repository
+pi --recipe .
 ```
 
-Then clone this template and run it:
+## What's Included
 
-```bash
-git clone https://github.com/introspection-recipes/coding-agent
-pi --recipe ./coding-agent
-```
+- A ready-to-run Pi agent
+- Shared behavior in `SYSTEM.md`
+- Model, tools, skills, and subagents in `agents/agent.yaml`
 
-## Make it yours
-
-This is a directory, so change it like any other source. Nothing here is
-generated and nothing is hidden.
-
-| Path | What it is |
-| --- | --- |
-| `SYSTEM.md` | instructions every agent in the package starts from |
-| `agents/agent.yaml` | model, tools, skills and subagents for the one agent |
-
-Check your changes before you commit them:
-
-```bash
-introspection check
-```
-
-## Docs
-
-The format, the agent file, MCP policy and judges are documented at
-[pi.recipes/docs](https://pi.recipes/docs).
+[Read the Recipes documentation →](https://pi.recipes/docs)
