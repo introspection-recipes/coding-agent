@@ -1,6 +1,6 @@
-# Coding agent
+# Starter Template
 
-A starting point for your coding agent.
+A starter template for Pi.
 
 ## Quickstart
 
@@ -13,8 +13,8 @@ pi install npm:@introspection-ai/recipes
 Then clone this template and run it:
 
 ```bash
-git clone https://github.com/introspection-recipes/coding-agent
-pi --recipe ./coding-agent
+git clone https://github.com/introspection-recipes/pi-starter
+pi --recipe ./pi-starter
 ```
 
 ## Make it yours
