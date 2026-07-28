@@ -15,7 +15,6 @@ cd coding-agent
 Validate the recipe and start a fresh local Pi session:
 
 ```bash
-introspection check
 introspection local --runtime coding-agent
 ```
 
@@ -35,7 +34,7 @@ Local Pi → Development → Staging → Production → Learn and repeat
 
 ### 1. Change and prove it locally
 
-Customize `SYSTEM.md` and `agents/agent.yaml`, then repeat `introspection check` and the local prompt above in fresh sessions. Test any new tools or instructions as well as ordinary coding requests that should keep working.
+Customize `SYSTEM.md` and `agents/agent.yaml`, then repeat the local prompt above in fresh sessions. Test any new tools or instructions as well as ordinary coding requests that should keep working.
 
 ### 2. Create the runtime and test development
 
