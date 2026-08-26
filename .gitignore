@@ -2,3 +2,6 @@
 .pi/bin/
 .pi/mcp-session.json
 .pi/mcporter.json
+
+# Dependencies
+node_modules/
