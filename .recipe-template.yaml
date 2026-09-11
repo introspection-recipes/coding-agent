@@ -1,25 +1,35 @@
 # The seeding contract for this template.
 #
-# Deliberately NOT under `.introspection/`: the recipe checker globs
-# `.introspection/*.yaml` and validates every file there as a recipe manifest,
-# so a second document in that directory fails the check.
+# This repository stays a VALID, WORKING recipe — `recipe check` runs on it,
+# people clone it directly, and `introspection init` uses it. That rules out
+# placeholders in the files: `{slug}` is not a legal Runtime slug, a manifest
+# named `{slug}.yaml` fails validation, and `package-lock.json` cannot be
+# regenerated to match a placeholder in `package.json`.
 #
-# A hosted repository created from this template is seeded by substituting the
-# variables below in file contents *and* in paths — `.introspection/{slug}.yaml`
-# is renamed, because the Runtime group's identity is derived from that
-# filename rather than from `name:` inside it.
+# So the contract names the literal tokens to replace instead. Seeding a hosted
+# repository rewrites these exact strings — in file contents and in paths — to
+# the new Runtime's identity. Nothing else is touched, so a `{placeholder}`
+# written deliberately in a prompt survives verbatim.
 #
-# Only the names declared here are substituted. Any other `{word}` in this
-# repository is left exactly as written, so prompts and code samples are safe.
-# This file is consumed at seed time and is not committed to the new repository.
-variables:
+# Deliberately not under `.introspection/`: the checker globs
+# `.introspection/*.yaml` and validates every file there as a recipe manifest.
+version: 1
+
+substitute:
+  # The Runtime group's identity. Also the manifest FILENAME — the control
+  # plane derives the slug from `.introspection/<slug>.yaml`, not from `name:`
+  # inside it — so this token is replaced in paths as well as contents.
   slug:
-    description: Runtime group slug; also the manifest filename.
-    required: true
+    token: coding-agent
+    paths: true
+  # Human-readable name, in the manifest's `name:`.
   name:
-    description: Human-readable Runtime name.
-    required: true
+    token: coding-agent
+  # One line describing the agent.
   description:
-    description: One line describing what the agent does.
-    required: false
-    default: An Introspection agent.
+    token: Customizable Pi coding agent
+
+# Files the seeder must regenerate rather than rewrite, because two documents
+# have to agree and a textual substitution would leave them inconsistent.
+regenerate:
+  - package-lock.json
