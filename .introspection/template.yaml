@@ -1,0 +1,21 @@
+# The seeding contract for this template.
+#
+# A hosted repository created from this template is seeded by substituting the
+# variables below in file contents *and* in paths — `.introspection/{slug}.yaml`
+# is renamed, because the Runtime group's identity is derived from that
+# filename rather than from `name:` inside it.
+#
+# Only the names declared here are substituted. Any other `{word}` in this
+# repository is left exactly as written, so prompts and code samples are safe.
+# This file is consumed at seed time and is not committed to the new repository.
+variables:
+  slug:
+    description: Runtime group slug; also the manifest filename.
+    required: true
+  name:
+    description: Human-readable Runtime name.
+    required: true
+  description:
+    description: One line describing what the agent does.
+    required: false
+    default: An Introspection agent.

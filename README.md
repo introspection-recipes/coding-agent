@@ -8,14 +8,14 @@ Install Node.js 24 or newer and the Introspection CLI, then create your own reci
 
 ```bash
 npm install -g @introspection-ai/cli
-introspection init coding-agent template-starter
-cd coding-agent
+introspection init {slug} template-starter
+cd {slug}
 ```
 
 Validate the recipe and start a fresh local Pi session:
 
 ```bash
-introspection local --runtime coding-agent
+introspection local --runtime {slug}
 ```
 
 Ask:
@@ -42,7 +42,7 @@ Development requires the recipe's first runtime. Commit the locally proven recip
 
 1. In the Introspection app, open your organization's **Integrations** page and grant the Introspection GitHub App access to the repository.
 2. Open the target project, go to **Runtimes**, and select **New runtime**.
-3. Choose the repository and the runtime in `.introspection/coding-agent.yaml`, confirm that its recipe path is `.`, and create the first version from `main`.
+3. Choose the repository and the runtime in `.introspection/{slug}.yaml`, confirm that its recipe path is `.`, and create the first version from `main`.
 4. In **Versions**, confirm that the immutable version's recipe commit matches the `main` commit you intended to deploy.
 
 Once the runtime exists, exercise uncommitted changes through the cloud development path:
@@ -75,6 +75,6 @@ Use production conversations and recurring patterns to choose the smallest usefu
 - A ready-to-run Pi coding agent
 - Shared behavior in `SYSTEM.md`
 - Model and tool configuration in `agents/agent.yaml`
-- Runtime metadata in `.introspection/coding-agent.yaml`
+- Runtime metadata in `.introspection/{slug}.yaml`
 
 [Read the Recipes documentation →](https://docs.introspection.dev/recipes)

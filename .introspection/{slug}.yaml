@@ -1,0 +1,9 @@
+# Seeded from introspection-recipes/template-starter. `{slug}`, `{name}` and
+# `{description}` are replaced when a hosted repository is created from this
+# template; the filename carries the Runtime group's identity, so it is
+# substituted too.
+name: {name}
+path: .
+description: {description}
+runtime:
+  llm_mode: managed
