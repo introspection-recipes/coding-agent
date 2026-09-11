@@ -1,5 +1,9 @@
 # The seeding contract for this template.
 #
+# Deliberately NOT under `.introspection/`: the recipe checker globs
+# `.introspection/*.yaml` and validates every file there as a recipe manifest,
+# so a second document in that directory fails the check.
+#
 # A hosted repository created from this template is seeded by substituting the
 # variables below in file contents *and* in paths — `.introspection/{slug}.yaml`
 # is renamed, because the Runtime group's identity is derived from that

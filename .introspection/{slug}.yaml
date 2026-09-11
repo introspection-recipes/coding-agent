@@ -2,8 +2,11 @@
 # `{description}` are replaced when a hosted repository is created from this
 # template; the filename carries the Runtime group's identity, so it is
 # substituted too.
-name: {name}
+#
+# The values are quoted because YAML reads a bare `{name}` as a flow mapping
+# rather than a string.
+name: "{name}"
 path: .
-description: {description}
+description: "{description}"
 runtime:
   llm_mode: managed
